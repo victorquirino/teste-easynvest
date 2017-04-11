@@ -1,0 +1,91 @@
+body {
+  margin: 0px;
+  padding: 15px; }
+
+.form-class {
+  width: 50%;
+  float: left;
+  position: relative;
+  padding: 1em;
+  border: 1px solid #c3b8b1; }
+  .form-class .container {
+    width: 100%;
+    float: left;
+    position: relative; }
+    .form-class .container .input {
+      width: 100%;
+      float: left;
+      margin-bottom: 1em;
+      outline: none;
+      padding: 0.1em;
+      border-width: 0 0 1px;
+      line-height: 1.3em;
+      height: 2em;
+      border-radius: 0;
+      color: #c3b8b1; }
+      .form-class .container .input:focus {
+        border-bottom: 1px solid #000; }
+        .form-class .container .input:focus + label {
+          color: #000;
+          -webkit-transform: translate3d(0, -20px, 0) scale(0.75);
+                  transform: translate3d(0, -20px, 0) scale(0.75);
+          -webkit-transform-origin: left top;
+                  transform-origin: left top; }
+    .form-class .container label {
+      position: absolute;
+      top: 5px;
+      left: 0px;
+      z-index: 1;
+      font-size: 1em;
+      font-weight: bold;
+      color: #c3b8b1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      pointer-events: none; }
+    .form-class .container .has-error {
+      border-bottom: 1px solid red; }
+    .form-class .container .has-error-label {
+      color: red; }
+    .form-class .container span {
+      position: absolute;
+      color: red;
+      font-size: 0.7em;
+      right: 0px; }
+    .form-class .container img {
+      width: 6em;
+      height: 6em;
+      float: left;
+      margin-bottom: 0.6em; }
+    .form-class .container .submit-button {
+      width: 100%;
+      float: left;
+      position: relative;
+      padding: 0.7em 0px 0.7em 0px;
+      margin-top: 0.6em;
+      font-size: 1.1em;
+      text-align: center;
+      border-radius: 2em;
+      background: #f5f5f5;
+      color: #e1e2eb;
+      border: none;
+      -webkit-transition: all .2s ease-in;
+      transition: all .2s ease-in; }
+      .form-class .container .submit-button:hover {
+        background: #00C8B3;
+        color: #fff;
+        cursor: pointer;
+        -webkit-transition: all .3s ease-in;
+        transition: all .3s ease-in; }
+    .form-class .container svg {
+      width: 2em;
+      height: 2em;
+      position: absolute;
+      top: 50%;
+      margin-top: -1em;
+      left: 50%;
+      margin-left: -1em;
+      display: none; }
+  .form-class .map {
+    margin-bottom: 1em; }

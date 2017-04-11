@@ -1,0 +1,16 @@
+{
+  "name": "teste-easynvest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Lopes",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "browser-sync": "^2.18.8",
+    "gulp-sass": "^2.0.4"
+  }
+}

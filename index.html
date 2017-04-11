@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="UTF-8">
+    <title>Teste Easynvest</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/bower_components/angular-google-places-autocomplete/src/autocomplete.css">
+
+    <!-- EXTERNAL LIBS -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script> -->
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="/bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+    <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+
+    <!-- SCRIPTS -->
+    <script src="js/main.js"></script>
+  </head>
+  <body ng-controller="MainCtrl">
+    <form name="crudForm" class="form-class" action="main.html" method="GET">
+      <div class="container">
+        <input
+          id="{{fieldFullName.id}}"
+          class="{{fieldFullName.class}}"
+          type="{{fieldFullName.type}}"
+          name="{{fieldFullName.name}}"
+          ng-model="nome"
+          value=""
+          />
+          <label for="{{fieldFullName.name}}">Nome completo</label>
+      </div>
+      <div class="container">
+        <input
+          id="{{fieldCpf.id}}"
+          class="{{fieldCpf.class}}"
+          ng-class="((crudForm.txtCpf.$error.mask || cpf == '') && crudForm.txtCpf.$touched) ? 'has-error-label' : '';"
+          type="{{fieldCpf.type}}"
+          name="{{fieldCpf.name}}"
+          ui-mask="{{fieldCpf.Mask}}"
+          ui-mask-placeholder
+          ui-mask-placeholder-char="_"
+          ui-options="{clearOnBlur: false}"
+          ng-model="cpf"
+          ng-required="true"
+          />
+          <label for="{{fieldCpf.name}}"
+            ng-class="((crudForm.txtCpf.$error.mask || cpf == '') && crudForm.txtCpf.$touched) ? 'has-error-label' : 'has-value';">
+            CPF
+          </label>
+          <span ng-show="((crudForm.txtCpf.$error.mask || cpf == '') && crudForm.txtCpf.$touched)">
+            O CPF é inválido
+          </span>
+      </div>
+      <div class="container">
+        <input
+          id="{{fieldCelphone.id}}"
+          class="{{fieldCelphone.class}}"
+          ng-class="((crudForm.txtTelephone.$mask || celphone == '') && crudForm.txtTelephone.$touched) ? 'has-error-label' : '';"
+          type="{{fieldCelphone.type}}"
+          name="{{fieldCelphone.name}}"
+          ng-model="celphone"
+          ui-mask="{{fieldCelphone.Mask}}"
+          ui-options="{clearOnBlur: false}"
+          ui-mask-placeholder
+          ui-mask-placeholder-char="_"
+          ng-required="true"
+          />
+          <label for="{{fieldCelphone.name}}" ng-class="((crudForm.txtTelephone.$mask || celphone == '') && crudForm.txtTelephone.$touched) ? 'has-error-label' : '';">
+            Celular
+          </label>
+          <span ng-show="(crudForm.txtTelephone.$error.mask || celphone == '') && crudForm.txtTelephone.$touched">
+            O celular é inválido
+          </span>
+      </div>
+      <div class="container">
+        <input
+          id="{{fieldAddress.id}}"
+          class="{{fieldAddress.class}}"
+          type="{{fieldAddress.type}}"
+          name="{{fieldAddress.name}}"
+          ng-model="address"
+          g-places-autocomplete
+          value="" />
+        <label for="{{fieldAddress.name}}">Endereço</label>
+      </div>
+      <div class="container">
+        <input
+          id="{{fieldComplement.id}}"
+          class="{{fieldComplement.class}}"
+          type="{{fieldComplement.type}}"
+          name="{{fieldComplement.name}}"
+          ng-model="complement"
+          value="" />
+        <label for="{{fieldComplement.name}}">Complemento</label>
+      </div>
+      <div class="container">
+        <div class="map" map-lazy-load="https://maps.google.com/maps/api/js">
+          <ng-map center="41,-87" zoom="2"></ng-map>
+        </div>
+      </div>
+      <div class="container">
+        <input
+          id="image-input"
+          class="{{fieldUploadImage.class}} input"
+          type="{{fieldUploadImage.type}}"
+          name="{{fieldUploadImage.name}}"
+          ng-model="urlImage"
+          value="Carregar imagem" />
+
+          <img class="thumb" id="image-thumb" src="" />
+        <!-- <label for="{{fieldUploadImage.id}}">Carregar uma imagem</label> -->
+      </div>
+      <div class="container">
+        <button
+          id="{{fieldButton.id}}"
+          class="{{fieldButton.class}}"
+          type="{{fieldButton.type}}"
+          name="{{fieldButton.name}}"
+          ng-click="saveForm(nome, cpf, celphone, address, complement);">
+          {{fieldButton.value}}
+          <ng-include src="'images/rolling.svg'"></ng-include>
+        </button>
+      </div>
+    </form>
+  </body>
+</html>

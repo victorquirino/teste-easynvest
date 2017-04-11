@@ -1,0 +1,63 @@
+{
+  "fields": {
+    	"inputFullName": {
+			"name": "txtFullname",
+			"id": "txtFullname",
+			"value": "",
+			"type": "text",
+			"class": "input"
+		},
+		"inputCpf": {
+			"name": "txtCpf",
+			"id": "txtCpf",
+			"value": "",
+			"type": "tel",
+			"Mask": "999.999.999-99",
+			"class": "input"
+		},
+		"inputCelphone": {
+			"name": "txtTelephone",
+			"id": "txtTelefone",
+			"value": "",
+			"type": "tel",
+			"Mask": "(99)9999?9-9999",
+			"class": "input"
+		},
+		"inputAddress": {
+			"name": "txtAddress",
+			"id": "txtAddress",
+			"value": "",
+			"type": "text",
+			"class": "input"
+		},
+		"map": {
+			"name": "mapRenderer",
+			"id": "mapRenderer",
+			"class": "map-renderer"
+		},
+		"inputComplement": {
+			"name": "txtComplement",
+			"id": "txtComplement",
+			"value": "",
+			"type": "text",
+			"class": "input"
+		},
+		"upload": {
+			"name": "uplImage",
+			"id": "uplImage",
+      "type": "file",
+			"class": "upload-button"
+		},
+		"image": {
+			"name": "imgAvatar",
+			"id": "imgAvatar",
+			"class": "image"
+		},
+		"button": {
+			"name": "btnSave",
+			"id": "btnSave",
+			"value": "Enviar",
+			"class": "submit-button"
+		}
+  }
+}
